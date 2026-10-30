@@ -1,5 +1,14 @@
-# excluimos credenciales y variables de entorno
+# Credenciales y variables de entorno privadas
 .env
 
-# datos de la IA
+# Logs y zona de staging temporal de Airflow
+logs/
+
+# Cache y binarios de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Archivos auxiliares locales
 enunciado_utf8.txt
