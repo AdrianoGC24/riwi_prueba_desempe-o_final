@@ -1,0 +1,5 @@
+# excluimos credenciales y variables de entorno
+.env
+
+# datos de la IA
+enunciado_utf8.txt
