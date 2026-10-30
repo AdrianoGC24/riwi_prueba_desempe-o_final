@@ -1,0 +1,6 @@
+data_sources/
+logs/
+.git/
+__pycache__/
+*.pdf
+enunciado_utf8.txt

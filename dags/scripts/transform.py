@@ -317,8 +317,3 @@ def transform_and_validate(staging_dir="/opt/airflow/logs/staging", use_catalog_
 
     return staging_dir
 
-
-if __name__ == "__main__":
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    stage_dir = os.path.join(base_dir, "logs", "staging")
-    transform_and_validate(staging_dir=stage_dir)

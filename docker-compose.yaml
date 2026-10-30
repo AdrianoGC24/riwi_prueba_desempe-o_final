@@ -145,6 +145,23 @@ services:
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
 
+  # 8. API REST del Catálogo de Productos Legado (Plus Sección 4.3 del PDF)
+  fastapi-catalog:
+    build:
+      context: ./catalog_api
+      dockerfile: Dockerfile
+    image: datamart-catalog-api:1.0.0
+    container_name: datamart_catalog_api
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    restart: always
+
 volumes:
   postgres-db-volume:
   dw-db-volume:

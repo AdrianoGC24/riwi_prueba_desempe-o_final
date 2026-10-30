@@ -51,8 +51,3 @@ def extract_historical_sales(data_sources_dir="/opt/airflow/data_sources", stagi
     print(f"--> Exitoso: Se guardaron {len(df):,} filas en {output_file}")
     return output_file
 
-
-# Para probarlo directamente desde la terminal con: python dags/scripts/extract.py
-if __name__ == "__main__":
-    extract_daily_sales(data_sources_dir="data_sources", staging_dir="logs/staging")
-    extract_historical_sales(data_sources_dir="data_sources", staging_dir="logs/staging")

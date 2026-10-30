@@ -54,10 +54,7 @@ def load_star_schema_to_dw(staging_dir="/opt/airflow/logs/staging", conn_id="pos
     cursor = conn.cursor()
 
     try:
-        # =========================================================================
         # 1. CARGA DE DIMENSIONES (Primero para satisfacer Foreign Keys)
-        # =========================================================================
-        
         # 1.1 dim_date
         path_date = os.path.join(staging_dir, "dim_date.parquet")
         if os.path.exists(path_date):
@@ -104,10 +101,7 @@ def load_star_schema_to_dw(staging_dir="/opt/airflow/logs/staging", conn_id="pos
 
         conn.commit()
 
-        # =========================================================================
         # 2. CARGA DE HECHOS Y AUDITORÍA
-        # =========================================================================
-
         # 2.1 audit_rejected_records
         path_rejected = os.path.join(staging_dir, "audit_rejected_records.parquet")
         if os.path.exists(path_rejected):
@@ -181,8 +175,3 @@ def load_star_schema_to_dw(staging_dir="/opt/airflow/logs/staging", conn_id="pos
         cursor.close()
         conn.close()
 
-
-if __name__ == "__main__":
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    stage_dir = os.path.join(base_dir, "logs", "staging")
-    load_star_schema_to_dw(staging_dir=stage_dir)
