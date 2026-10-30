@@ -71,3 +71,4 @@ ORDER BY d.year, d.month;
 --     monthly alert when a product's return rate exceeds 20%.
 --     This alone could recover a significant portion of net revenue.
 -- ============================================================================
+

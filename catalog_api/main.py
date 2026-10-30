@@ -40,9 +40,7 @@ def get_products(
     page: int = Query(1, ge=1, description="Número de página"),
     limit: int = Query(50, ge=1, le=10000, description="Cantidad de productos por página")
 ):
-    """
-    Endpoint 1 (Requisito PDF): Devuelve el listado de productos con paginación.
-    """
+    """Endpoint 1 (Requisito PDF): Devuelve el listado de productos con paginación."""
     all_products = list(CATALOG_DB.values())
     total = len(all_products)
     start = (page - 1) * limit
@@ -59,9 +57,7 @@ def get_products(
 
 @app.get("/products/{stock_code}", response_model=Product, tags=["Products"])
 def get_product_by_code(stock_code: str):
-    """
-    Endpoint 2 (Requisito PDF): Permite consultar un producto por su código normalizado.
-    """
+    """Endpoint 2 (Requisito PDF): Permite consultar un producto por su código normalizado."""
     code_normalized = stock_code.upper().strip()
     if code_normalized not in CATALOG_DB:
         raise HTTPException(status_code=404, detail=f"Producto con código '{stock_code}' no encontrado en el catálogo.")

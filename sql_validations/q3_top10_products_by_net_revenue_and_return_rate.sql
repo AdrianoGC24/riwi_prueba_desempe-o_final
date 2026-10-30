@@ -42,3 +42,4 @@ GROUP BY p.stock_code, p.canonical_description, p.category
 HAVING SUM(m.sales_count) >= 10
 ORDER BY revenue_return_rate_pct DESC
 LIMIT 10;
+

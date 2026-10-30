@@ -20,3 +20,4 @@ FROM fact_daily_product_metrics m
 JOIN dim_products p ON m.stock_code = p.stock_code
 GROUP BY p.category
 ORDER BY gross_revenue DESC;
+

@@ -24,3 +24,4 @@ FROM fact_transactions t
 GROUP BY t.country
 ORDER BY total_transaction_lines DESC
 LIMIT 20;
+

@@ -19,3 +19,4 @@ FROM fact_daily_product_metrics m
 JOIN dim_date d ON m.date_key = d.date_key
 GROUP BY d.year, d.month, d.month_name
 ORDER BY d.year, d.month;
+

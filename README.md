@@ -261,3 +261,4 @@ prueba_desempeño_final/
 docker compose down          # Stop containers (data persists in volumes)
 docker compose down -v       # Stop and delete all volumes (full reset)
 ```
+

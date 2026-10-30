@@ -35,3 +35,4 @@ SELECT
 FROM dim_products
 GROUP BY consistency_level
 ORDER BY product_count DESC;
+

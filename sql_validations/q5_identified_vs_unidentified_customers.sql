@@ -38,3 +38,4 @@ FROM fact_transactions t
 JOIN dim_customers c ON t.customer_id = c.customer_id
 GROUP BY c.is_identified
 ORDER BY c.is_identified DESC;
+
